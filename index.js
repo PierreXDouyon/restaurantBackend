@@ -3,7 +3,12 @@ const app = express();
 const port = 3000;
 const routes = require("./routes/index.js");
 var cors = require("cors");
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:8080',
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type,Authorization',
+  credentials: true,
+}));
 const bodyParser = require("body-parser");
 // parse application/json
 app.use(bodyParser.json());
