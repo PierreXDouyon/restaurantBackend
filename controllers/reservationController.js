@@ -3,19 +3,10 @@ const reservationCollection = database.collection("reservations");
 const restaurantCollection = database.collection("restaurants");
 
 const getAll = async (req, res) => {
-    const reservation = req.body;
-    
-    const pipeline = [
-        {
-          $lookup: {
-            from: "restaurants",
-            localField: "_id",
-            foreignField: "restaurantId",
-            as: "matchedData",
-          },
-        },
-      ];
-      const result = await reservationCollection.aggregate(pipeline).toArray();
+    const user_id = req.body.userId;
+    console.log("-- user id", user_id);
+    const resvationLst = await reservationCollection.find({userId:user_id}).toArray();
+    let result = {status:1, results:resvationLst }
     return res.json({
         success: true,
         data: {
