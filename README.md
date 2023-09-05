@@ -22,7 +22,6 @@
    - Begin by installing the necessary project dependencies with the following commands:
 ```
 npm install
-npm install pinia
 ```
    - Additionally, configure the database settings within MongoDB Cloud, specifying the database name and MongoDB Uri.
 
