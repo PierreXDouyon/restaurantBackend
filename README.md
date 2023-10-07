@@ -28,11 +28,17 @@ npm install
 2. Compile and enable hot-reloading for development:
    - To compile the application and enable hot-reloading for an optimal development experience, use the following command:
    ```
-   node index.js
+   npm run dev
    ```
 
 3. Access the restaurantBackend app:
    - After running the previous command, open your web browser and navigate to the designated local server address, typically http://localhost:3000. This will grant you access to the restaurantBackend app.
+
+4. Run the restaurantBackend in Codespace:
+    ```
+   npm run dev
+   ```
+   - After run the Backend in Codespace, public url will be used in frontend with endpoint url.
 
 ## Technologies Used
 - Node.js
